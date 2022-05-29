@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive calculator</title>
+</head>
+<style>
+    #grid{display: grid;
+    grid-template-columns:25% 25% 25% 25% ;
+    
+  background-color: #2196F3;
+    padding: 2rem;}
+    .gridClass {
+        white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+.gridClass:hover{background-color: hotpink;}
+.equal{
+    grid-column-start: 3;
+    grid-column-end: 5;
+}
+.equal:hover{background-color: orangered;}
+.screen
+{
+    
+   grid-column-start: 1;
+   grid-column-end: 5;
+}
+.screen:hover{background-color: aliceblue;border:3px solid black }
+</style>
+<body>
+    <form id="grid" name="calc">
+        <!-- <div > -->
+            <input type="text" class="gridClass screen" name="text" readonly="">
+            <div class="gridClass" onclick="document.calc.text.value =''">C</div>
+            <div class="gridClass" onclick="document.calc.text.value +='00'">00</div>
+            <div class="gridClass" onclick="document.calc.text.value +='%'">%</div>
+            <div class="gridClass" onclick="document.calc.text.value +='*'">*</div>
+            <div class="gridClass" onclick="document.calc.text.value +='9'">9</div>
+            <div class="gridClass" onclick="document.calc.text.value +='8'">8</div>
+            <div class="gridClass" onclick="document.calc.text.value +='7'">7</div>
+            <div class="gridClass" onclick="document.calc.text.value +='+'">+</div>
+            <div class="gridClass" onclick="document.calc.text.value +='6'">6</div>
+            <div class="gridClass" onclick="document.calc.text.value +='5'">5</div>
+            <div class="gridClass" onclick="document.calc.text.value +='4'">4</div>
+            <div class="gridClass" onclick="document.calc.text.value +='-'">-</div>
+            <div class="gridClass" onclick="document.calc.text.value +='3'">3</div>
+            <div class="gridClass" onclick="document.calc.text.value +='2'">2</div>
+            <div class="gridClass" onclick="document.calc.text.value +='1'">1</div>
+            <div class="gridClass" onclick="document.calc.text.value +=Math.floor((Math.random()*10)+1)">Random(1-10)</div>
+            <div class="gridClass" onclick="document.calc.text.value +='3.14'"> π</div>
+            <div class="gridClass" onclick="document.calc.text.value +='.'">.</div>
+            <div class="gridClass equal" onclick="document.calc.text.value =eval(calc.text.value)">=</div>
+        <!-- </div> -->
+    </form>
+    
+</body>
+</html>
